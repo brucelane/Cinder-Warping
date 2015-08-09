@@ -27,7 +27,11 @@
 #include "cinder/Matrix.h"
 #include "cinder/Rect.h"
 #include "cinder/Vector.h"
-
+#include "cinder/gl/scoped.h"
+#include "cinder/app/App.h"
+#include "cinder/app/RendererGl.h"
+#include "cinder/gl/gl.h"
+#include "cinder/gl/Texture.h"
 #include <vector>
 
 // forward declarations
