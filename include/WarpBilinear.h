@@ -25,12 +25,15 @@
 
 #include "Warp.h"
 
+#include <boost/shared_ptr.hpp>
+#include <cassert>
+
 namespace ph { namespace warping {
 
 typedef std::shared_ptr<class WarpBilinear>	WarpBilinearRef;
 
 class WarpBilinear
-	: public Warp
+	: public Warp, public std::enable_shared_from_this<WarpBilinear>
 {
 public:
 	//
@@ -38,10 +41,7 @@ public:
 
 public:
 	WarpBilinear(const ci::gl::Fbo::Format &format=ci::gl::Fbo::Format());
-	virtual ~WarpBilinear(void);	
-
-	//! returns a shared pointer to this warp
-	WarpBilinearRef	getPtr() { return std::static_pointer_cast<WarpBilinear>(shared_from_this()); }
+	virtual ~WarpBilinear(void);
 
 	//!
 	virtual ci::XmlTree	toXml() const; // overrides base class
