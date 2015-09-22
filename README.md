@@ -4,7 +4,7 @@ Cinder-Warping
 A Cinder block that enables you to easily create editable bi-linear and perspective warps, or a combination of the two.
 
 
-![Preview](https://raw.github.com/paulhoux/Cinder-Warping/master/PREVIEW.jpg)
+![Preview](https://raw.github.com/brucelane/Cinder-Warping/master/PREVIEW.jpg)
 
 
 Image warping, as used in this block, is the process of manipulating an image so that it can be projected onto flat or curved surfaces without distortion. There are three types of warps available:
@@ -14,15 +14,15 @@ Image warping, as used in this block, is the process of manipulating an image so
 
 
 #####Adding this block to Cinder
-This block is meant to be used with version 0.8.5 (or higher) of Cinder.
+This block is meant to be used with version 0.9 (or higher) of Cinder.
 
 Cinder's tool for setting up empty projects, TinderBox, has been revamped and now supports a neat system for the management of plug-ins called Cinder Blocks. This Warping block supports this new feature. To add this block to your copy of Cinder, so it will be detected automatically by TinderBox:
 * Open a command window (or Terminal)
 * Switch to the disk containing the Cinder root folder, e.g.: ```d:```
 * Browse to the Cinder root folder: ```cd path\to\cinder_master```
-* Add the Warping block to the blocks folder: ```git clone https://github.com/paulhoux/Cinder-Warping.git blocks/Warping```
+* Add the Warping block to the blocks folder: ```git clone https://github.com/brucelane/Cinder-Warping.git blocks/Warping```
 
-Alternatively, you can download the repository as a [ZIP-file](https://github.com/paulhoux/Cinder-Warping/zipball/master) and manually add the files to a "cinder_master\blocks\Warping" folder.
+Alternatively, you can download the repository as a [ZIP-file](https://github.com/brucelane/Cinder-Warping/zipball/master) and manually add the files to a "cinder_master\blocks\Warping" folder.
 
 
 
