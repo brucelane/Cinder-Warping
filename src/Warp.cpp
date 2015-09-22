@@ -55,15 +55,24 @@ Warp::~Warp( void )
 }
 
 void Warp::draw( const gl::Texture2dRef &texture )
-{
-	draw( texture, texture->getBounds(), Rectf( getBounds() ) );
+{	
+	// from https://github.com/jhurlbut/Cinder-Warping
+	// draw( texture, texture->getBounds(), Rectf( getBounds() ) );
+	if (mSrcArea.x1 > 0)
+		draw(texture, mSrcArea, Rectf(getBounds()));
+	else
+		draw(texture, texture->getBounds(), Rectf(getBounds()));
 }
 
 void Warp::draw( const gl::Texture2dRef &texture, const Area &srcArea )
 {
 	draw( texture, srcArea, Rectf( getBounds() ) );
 }
+// from https://github.com/jhurlbut/Cinder-Warping
+void Warp::setSrcArea(const ci::Area &srcArea) {
+	mSrcArea = Area(srcArea);
 
+}
 bool Warp::clip( Area &srcArea, Rectf &destRect ) const
 {
 	bool clipped = false;
@@ -153,6 +162,8 @@ void Warp::fromXml( const XmlTree &xml )
 	mControlsX = xml.getAttributeValue<int>( "width", 2 );
 	mControlsY = xml.getAttributeValue<int>( "height", 2 );
 	mBrightness = xml.getAttributeValue<float>( "brightness", 1.0f );
+	// from https://github.com/jhurlbut/Cinder-Warping
+	mSrcArea = Area(xml.getAttributeValue<int>("srcAreaX1", -1), xml.getAttributeValue<int>("srcAreaY1", -1), xml.getAttributeValue<int>("srcAreaX2", -1), xml.getAttributeValue<int>("srcAreaY2", -1));
 
 	// load control points
 	mPoints.clear();

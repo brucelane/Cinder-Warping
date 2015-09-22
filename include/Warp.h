@@ -118,6 +118,9 @@ public:
 	void				draw( const ci::gl::Texture2dRef &texture, const ci::Area &srcArea );
 	//! draws a specific area of a warped texture to a specific region
 	virtual void		draw( const ci::gl::Texture2dRef &texture, const ci::Area &srcArea, const ci::Rectf &destRect ) = 0;
+	// from https://github.com/jhurlbut/Cinder-Warping
+	void				setSrcArea(const ci::Area &srcArea);
+	ci::Area			getSrcArea(){ return mSrcArea; }
 
 	//! adjusts both the source area and destination rectangle so that they are clipped against the warp's content
 	bool				clip( ci::Area &srcArea, ci::Rectf &destRect ) const;
@@ -210,6 +213,8 @@ private:
 	static ci::ivec2	sMouse;
 
 	ci::vec2			mOffset;
+	// from https://github.com/jhurlbut/Cinder-Warping
+	ci::Area			mSrcArea; 
 };
 
 }
