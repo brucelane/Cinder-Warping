@@ -20,7 +20,7 @@
 
 #include "cinder/ImageIo.h"
 #include "cinder/Rand.h"
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
@@ -34,7 +34,7 @@ using namespace ci::app;
 using namespace ph::warping;
 using namespace std;
 
-class _TBOX_PREFIX_App : public AppBasic {
+class _TBOX_PREFIX_App : public App {
 public:
 	void setup();
 	void shutdown();
@@ -227,4 +227,4 @@ void _TBOX_PREFIX_App::updateWindowTitle()
 		getWindow()->setTitle( "Warping Sample - Using draw()" );
 }
 
-CINDER_APP_BASIC( _TBOX_PREFIX_App, RendererGl )
+CINDER_APP( _TBOX_PREFIX_App, RendererGl )
